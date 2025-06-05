@@ -195,6 +195,50 @@ Transformer
 
 </div>
 
+---
+transition: slide-up
+level: 2
+---
+
+# LLMs Basics
+
+Seq2seq
+
+<div grid="~ cols-2 gap-4 items-start">
+
+<div>
+
+<v-clicks depth="2">
+
+- Seq2seq
+    - Encoder: Process the input sequence and compress its information into a fixed-size representation called the context vector
+    
+    - Decoder: Use this encoded information (context vector) to generate the output sequence.
+
+</v-clicks>
+
+</div>
+
+<div class="flex justify-center">
+  <img src="./image/encoder-and-decoder-transformers-blocks.png" alt="ネットワーク図" width="180" />
+</div>
+
+</div>
+
+---
+transition: slide-up
+level: 2
+---
+
+# LLMs Basics
+
+Seq2seq
+
+<video controls width="700" style="display: block; margin-left: auto; margin-right: auto;">
+  <source src="./image/seq2seq_training_with_target.mp4" type="video/mp4">
+</video>
+
+
 
 ---
 transition: slide-up
@@ -353,19 +397,6 @@ Recurrent Neural Networks (RNNs)
 </div>
 
 
----
-transition: slide-up
-level: 2
----
-
-# The Principle of Transformer
-
-Motivation for Attention
-<v-clicks depth="2">
-
-- Minimize path length between any pair of words to facilitate learning of long-range dependencies.
-- Maximize the amount of computation that can be parallelized.
-</v-clicks>
 
 
 
@@ -432,21 +463,7 @@ Attention Mechanism
 </v-clicks>
 
 
----
-transition: slide-up
-level: 2
----
 
-# The Principle of Transformer
-
-Self-Attention
-
-<v-clicks depth="2">
-
-- The core intuition of attention is the idea of comparing an item of interest to a collection of other items in a way that reveals their relevance in the current context.
-
-- Self-attention in language: Computes a set of attention weights for each token in the input sequence by comparing it with every other token.
-</v-clicks>
 
 
 ---
@@ -526,6 +543,84 @@ Attention Mechanism
 
 </v-clicks>
 
+
+---
+transition: slide-up
+level: 2
+---
+
+# The Principle of Transformer
+
+Attention Mechanism
+
+<div class="flex justify-center">
+  <img src="./image/general_scheme-min.png" alt="ネットワーク図" width="600" />
+</div>
+
+
+---
+transition: slide-up
+level: 2
+---
+
+# The Principle of Transformer
+
+Attention Mechanism
+
+<v-switch>
+      <template #1>
+        <img src="./image/1-min.png" alt="Image 1" style="max-width: 650px;">
+      </template>
+      <template #2>
+        <img src="./image/2-min.png" alt="Image 2" style="max-width: 650px;">
+      </template>
+      <template #3>
+        <img src="./image/3-min.png" alt="Image 3" style="max-width: 650px;">
+      </template>
+      <template #4>
+        <img src="./image/4-min.png" alt="Image 4" style="max-width: 650px;">
+      </template>
+      <template #5>
+        <img src="./image/5-min.png" alt="Image 5" style="max-width: 650px;">
+      </template>
+      <template #6>
+        <img src="./image/6-min.png" alt="Image 6" style="max-width: 650px;">
+      </template>
+      <template #7>
+        <img src="./image/7-min.png" alt="Image 7" style="max-width: 650px;">
+      </template>
+      <template #8>
+        <img src="./image/8-min.png" alt="Image 8" style="max-width: 650px;">
+      </template>
+    </v-switch>
+
+
+---
+transition: slide-up
+level: 2
+---
+
+# The Principle of Transformer
+
+Self-Attention
+
+<div grid="~ cols-2 gap-4">
+<div>
+
+- 计算一个输入序列中每个元素对序列其他元素的Attention
+   - 长距离依赖建模: 自注意力机制能够直接建模输入序列中任意两个位置之间的关系，从而有效捕捉长距离依赖
+   - 并行化计算: 自注意力机制允许序列中所有元素同时处理，因此可以高效并行化计算，显著提高训练速度
+</div>
+
+<div>
+
+<video controls width="700" style="display: block; margin-left: auto; margin-right: auto;">
+  <source src="./image/encoder_self_attention.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+
+
 ---
 transition: slide-up
 level: 2
@@ -589,63 +684,6 @@ Components in Transformer Architecture
 </div>
 
 
-
----
-transition: slide-up
-level: 2
----
-
-# The Principle of Transformer
-
-Transformer
-
-<div grid="~ cols-2 gap-4 items-start">
-
-<div>
-
-<v-clicks depth="2">
-
-- The input sequence is tokenized, and each token is converted into an embedding and fed into the encoder.
-
-- The encoder processes the input sequence through its layers, producing a set of context-aware representations for each word in the sequence.
-
-</v-clicks>
-</div>
-
-<div class="flex justify-center">
-  <img src="./image/transformer_frame.png" alt="ネットワーク図" width="500" />
-</div>
-
-</div>
-
-
----
-transition: slide-up
-level: 2
----
-
-# The Principle of Transformer
-
-Transformer
-
-<div grid="~ cols-2 gap-4 items-start">
-
-<div>
-
-<v-clicks depth="2">
-
-- The decoder generates the output sequence one token at a time. For each token, it uses the encoded input representations and the previously generated tokens to produce a new token.
-
-- This process is autoregressive, meaning each token is generated based on the tokens that have been generated so far.
-
-</v-clicks>
-</div>
-
-<div class="flex justify-center">
-  <img src="./image/transformer_frame.png" alt="ネットワーク図" width="500" />
-</div>
-
-</div>
 
 
 ---
