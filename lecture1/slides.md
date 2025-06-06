@@ -842,9 +842,7 @@ Self-Attention
 
 - Each attention score quantifies how relevant every other word (or token) in the sequence is to a given word.
 
-- Self-attention processes all parts of the input can be parallelized. 
-    - The input embedding of $N$ tokens can be packed into a single matrix:
-    - $$X \in R^{N \times d}$$
+- If an attention mechanism assigns a high weight to a particular word when processing another word or making a prediction, it suggests that those highly-weighted words are important for the model's decision. 
 
 </v-clicks>
 
@@ -887,6 +885,44 @@ Components in Transformer Architecture
 
 </div>
 
+<!--
+
+### Multi-Head Attention (マルチヘッドアテンション)
+
+* **「Allows the model to jointly attend to information from different representation subspaces (e.g., syntactic, semantic, and discourse relationships).」**
+
+    * **異なる表現部分空間への共同注目:**
+        * 通常のSelf-Attentionでは、単語間の関連性を計算するための重み行列は1セットしかありません。しかし、言語には様々な種類の関係性が存在します。例えば、文法的な関係（主語と動詞）、意味的な関係（同義語、類義語）、談話的な関係（代名詞と先行詞）などです。
+        * Multi-Head Attentionは、これらの異なる種類の関係性を同時に捉えることを可能にします。具体的には、Self-Attentionの計算を、**異なる重み行列 $W_Q, W_K, W_V$ のセットを使って複数回（例：8回）並行して実行**します。それぞれの計算単位を「ヘッド」と呼びます。
+        * 各ヘッドは、訓練中に異なる「側面」に特化することを学習します。あるヘッドは文法的なパターンに注目し、別のヘッドは意味的な近さに注目するといった具合です。
+        * それぞれのヘッドからの出力は結合され、最終的に単一のベクトルに変換されて次の層に渡されます。これにより、モデルは単一のSelf-Attentionよりも遥かに豊かで多角的な文脈情報を取得し、より深い言語理解を実現します。
+
+
+### Positional Encoding (位置エンコーディング)
+
+* **「Injects some information about the order of the sequence into the model.」**
+
+    * **シーケンスの順序に関する情報をモデルに注入する:**
+        * Transformerモデルは、RNNとは異なり、再帰的な構造を持たず、畳み込みも使用しません。Self-Attentionは、シーケンス内のどの単語も並列に処理します。これは高速化に貢献しますが、その結果、**単語の順序に関する情報が失われます**。例えば、「犬が猫を追いかける」と「猫が犬を追いかける」は、単語の種類は同じでも順序が異なるため意味が全く異なりますが、Self-Attention単体ではこの違いを認識できません。
+        * Positional Encodingは、この欠点を補うために導入されます。これは、単語の埋め込みベクトルに、**その単語がシーケンス内のどの位置にあるかを示す特別なベクトルを加算**するものです。
+        * この位置エンコーディングは、通常、固定された（学習されない）周波数ベースの関数（例：サイン関数とコサイン関数）を用いて生成されます。これにより、モデルは単語の意味情報と同時に、その単語の相対的・絶対的な位置情報も得ることができます。
+        * 結果として、Transformerは単語の順序を考慮した上で文脈を理解し、意味を正確に把握できるようになります。
+
+### Add & Norm Layer (Add & Norm層)
+
+* **「Encourages training deeper models by ensuring that backpropagation through many layers does not result in vanishing or exploding gradients.」**
+
+    * **勾配消失・爆発を防ぎ、深いモデルの訓練を促進する:**
+        * この層は、Transformerの各サブレイヤー（Multi-Head AttentionやFeed-Forward層など）の後に配置されます。
+        * **「Add」部分（残差接続 / Residual Connection）:** サブレイヤーへの入力が、そのサブレイヤーの出力に直接加算されます。
+            * $Output = Input + Sublayer(Input)$
+            * これにより、勾配が深層ネットワークを逆伝播する際に、特定のパスを通ってバイパスされるため、勾配が消失したり爆発したりするのを防ぎやすくなります。また、各層が単なる入出力の変換ではなく、入力に対する「残差（差分）」を学習するように促すことで、訓練が安定しやすくなります。
+        * **「Norm」部分（レイヤー正規化 / Layer Normalization）:** 残差接続の出力は、Layer Normalizationに渡されます。
+            * Layer Normalizationは、バッチ正規化 (Batch Normalization) とは異なり、各サンプルの特徴量次元ごとに正規化を行います。これにより、各層の入力の分布を安定させ、勾配のスケールを適切に保ちます。
+            * 結果として、モデルの学習が安定し、より多くの層を持つ**深いネットワークでも効果的に訓練できるようになります。**
+
+これらの要素が組み合わさることで、Transformerモデルはこれまでのモデルが苦手としていた課題を克服し、自然言語処理の分野で革命的な性能を発揮することになりました。
+-->
 
 
 
@@ -901,3 +937,21 @@ level: 2
 <div class="flex justify-center">
   <img src="./image/tr18.png" alt="ネットワーク図" width="800" />
 </div>
+
+
+<!--
+アーキテクチャ: Transformerのエンコーダ（Encoder）部分をベースにしています。エンコーダは、入力シーケンス全体を双方向に処理し、各トークンに対する文脈化された表現を生成するのに優れています。
+
+アーキテクチャ: Transformerのデコーダ（Decoder）部分をベースにしています。デコーダは、前のトークンに基づいて次のトークンを生成するのに特化しています。
+-->
+
+---
+transition: slide-up
+level: 2
+---
+
+# Practive
+
+- [Hugging Face Transformers Tutorial](https://colab.research.google.com/github/lvzeyu/Tohoku_AIE_PBL/blob/main/lecture1/notebook/Hugging%20Face%20Transformers%20Tutorial.ipynb)
+
+- [Assignment](https://colab.research.google.com/github/lvzeyu/Tohoku_AIE_PBL/blob/main/lecture1/notebook/assignment.ipynb)
