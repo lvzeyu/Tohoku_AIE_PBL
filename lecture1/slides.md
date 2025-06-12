@@ -775,9 +775,9 @@ Self-Attention
 <div grid="~ cols-2 gap-4">
 <div>
 
-- 単一のシーケンス内で、各単語がそのシーケンス内の他のすべての単語とどのように関連しているかを評価し、それに基づいて単語の表現を学習する
-   - 長距離依存関係を反映: 各単語はシーケンス内の他のすべての単語と直接関連度を計算するため、単語間の距離が離れていても、その関係性を効率的に学習
-   - 並列計算: 各単語に対するSelf-Attentionの計算は、他の単語に対する計算とは独立して行える
+- Within a single sequence, each word evaluates how it relates to every other word in that sequence and learns its representation based on these relationships.
+   - Capturing long-range dependencies: Since each word directly computes its relevance to all other words in the sequence, relationships between distant words can be efficiently learned.
+   - Parallel computation: The self-attention calculation for each word can be performed independently of the calculations for other words.
 </div>
 
 <div>
