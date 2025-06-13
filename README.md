@@ -10,3 +10,4 @@
 ## Lecture2
 
 - 資料: [https://lvzeyu.github.io/Tohoku_AIE_PBL/lecture2/](https://lvzeyu.github.io/Tohoku_AIE_PBL/lecture2/)
+- コード: [LLAMA3 Fine-tuning for text classification using QLORA](https://github.com/lvzeyu/Tohoku_AIE_PBL/blob/main/lecture2/code/LLAMA_3_Fine_Tuning_for_Sequence_Classification.ipynb)
