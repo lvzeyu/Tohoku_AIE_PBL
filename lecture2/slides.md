@@ -337,6 +337,18 @@ RLHF
 </div>
 
 
+---
+transition: fade-out
+---
+
+# Post-training
+
+<div class="flex justify-center">
+  <img src="./image/1-chatgpt-training2.png" alt="ネットワーク図" width="700" />
+</div>
+
+
+
 
 ---
 transition: fade-out
@@ -555,6 +567,7 @@ transition: fade-out
     - Chain-of-Thought (CoT) Prompting is particulary useful in complex reasoning tasks
 - Post-training techniques play a crucial role in enhancing its capabilities, alignment, and task generalization of LLMs
     - SFT: Adapt to specific tasks/domains
-    - Instruction Fine-Tuning: Improve ability to follow natural language instructions and generalize.
+        - Instruction Fine-Tuning: Improve ability to follow natural language instructions and generalize.
     - RLHF: Align with human preferences
 - QLoRA is widely applied method for fine-tuning LLMs.
+
