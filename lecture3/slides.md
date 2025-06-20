@@ -471,7 +471,7 @@ Reasoning
     - Process information logically, make inferences, formulate plans, and solve complex problems
 
 <div style="display: flex; justify-content: center;">
-  <img src="./image/cot.png" width="600" />
+  <img src="./image/reasoning_llm.png" width="500" />
 </div>
 
 
@@ -492,12 +492,38 @@ ReAct
 
 - ReAct is inspired by the synergies between "acting" and "reasoning" which allow humans to learn new tasks and make decisions or reasoning.
 - Perform dynamic reasoning to create, maintain, and adjust plans for acting while also enabling interaction to external environments to incorporate additional information into the reasoning. 
+    - Thought - A reasoning step about the current situation
+    - Action - A set of actions to execute (e.g., tools)
+    - Observation - A reasoning step about the result of the action
 
 </v-clicks> 
 
 <div class="flex justify-center">
   <img src="./image/react1.png" alt="ネットワーク図" width="600" />
 </div>
+
+</div>
+
+---
+transition: fade-out
+---
+
+# LLMs-based Agent
+
+ReAct
+
+
+<div grid="~ cols-2 gap-4 items-start">
+
+  <div class="flex flex-col items-center">
+    <img src="./image/react_prompt.png" alt="ネットワーク図" width="600" />
+    <p class="mt-2 text-sm text-gray-600 text-center">ReAct achieves 「Reasoning + Acting」through carefully designed prompt engineering</p>
+  </div>
+
+  <div class="flex flex-col items-center">
+    <img src="./image/react_prompt2.png" alt="ネットワーク図" width="600" />
+    <p class="mt-2 text-sm text-gray-600 text-center">ReAct　continues 「Reasoning + Acting」 process iteratively until an action explicitly instructs the model to return the final answer..</p>
+  </div>
 
 </div>
 
@@ -533,16 +559,20 @@ transition: fade-out
 Planning
 
 - Planning refers to an LLM agent's ability to design a series of ordered actions to achieve a specific goal, based on its reasoning capabilities.  
+
 <div grid="~ cols-2 gap-4 items-start">
 
 <div class="flex flex-col items-center">
-    <img src="./image/plan.png" alt="ネットワーク図" width="600" />
-    <p class="mt-2 text-sm text-gray-600 text-center">Liu et al., “LLM+P: Empowering Large Language Models with Optimal Planning Proficiency.” arXiv preprint 2304.11477 (2023)</p>
-  </div>
+    <img src="./image/planning_example.png" alt="ネットワーク図" width="600" />
+    <p class="mt-2 text-sm text-gray-600 text-center"> Planning module allows the model to iteratively reflect on past behavior and update the current plan if necessary.</p>
+</div>
 
 
-<div class="flex justify-center">
-  <img src="./image/plan2.png" alt="ネットワーク図" width="200" />
+<div class="flex flex-col items-center">
+  <img src="./image/plan2.png" alt="ネットワーク図" width="150" />
+
+  <p class="mt-2 text-sm text-gray-600 text-center">Liu et al., “LLM+P: Empowering Large Language Models with Optimal Planning Proficiency.” arXiv preprint 2304.11477 (2023)</p>
+
 </div>
 
 </div>
@@ -578,8 +608,12 @@ Planning
   <img src="./image/webagent.png" alt="ネットワーク図" width="700" />
 </div>
 
-- [Mind2Web](https://arxiv.org/abs/2306.06070)：実際のWebページ上で多段階のタスク（例：ホテル予約、商品注文、情報抽出など）を正確に遂行できるかを評価するためのデータセット
+- [Mind2Web](https://arxiv.org/abs/2306.06070)：benchmark designed to evaluate whether agents can accurately perform multi-step tasks on real-world web pages (e.g., booking hotels, ordering products, extracting information).
 
+
+<!--
+実際のWebページ上で多段階のタスク（例：ホテル予約、商品注文、情報抽出など）を正確に遂行できるかを評価するためのデータセット
+-->
 
 ---
 transition: fade-out
@@ -609,15 +643,16 @@ Memory Module
 
 - Agents can maintain contextual coherence in continuous tasks and make more accurate judgments and decisions based on past experiences with memory module.
 
-<div grid="~ cols-2 gap-4 items-start">
-
-<v-clicks depth="2">
-
 - Short-term memory is typically implemented by embedding memory content as prompts directly within the LLM's input context.
-</v-clicks> 
+
+<div grid="~ cols-2 gap-4 items-start">
 
 <div class="flex justify-center">
   <img src="./image/short_memory.png" alt="ネットワーク図" width="600" />
+</div>
+
+<div class="flex justify-center">
+  <img src="./image/summary_memory.png" alt="ネットワーク図" width="600" />
 </div>
 
 </div>
@@ -636,11 +671,13 @@ Memory Module
 
 <v-clicks depth="2">
 
-- Short-term memory is typically implemented by embedding memory content as prompts directly within the LLM's input context.
+- Long-term memory is managed and retrieved by building a memory bank, which supports the persistent storage and efficient recall of knowledge.
+    - Construction: During the execution of long-term tasks, the agent systematically stores accumulated experiences, knowledge, and data into a memory bank. 
+    - Memory reading: Retrieving relevant content from the memory bank, typically by matching task requirements with stored memory information. 
 </v-clicks> 
 
 <div class="flex justify-center">
-  <img src="./image/summary_memory.png" alt="ネットワーク図" width="600" />
+  <img src="./image/long_memory.png" alt="ネットワーク図" width="600" />
 </div>
 
 </div>
@@ -750,9 +787,9 @@ Memory Reflexion
     <p class="mt-2 text-sm text-gray-600 text-center">Memory reflection is a crucial mechanism that allows an LLM agent to look back at its stored memories, not just to recall them, but to analyze and learn from its past experiences.</p>
   </div>
 
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col items-center mt-12">
     <img src="./image/reflexion-examples.png" alt="ネットワーク図" width="600" />
-    <p class="mt-2 text-sm text-gray-600 text-center">The key steps of the Reflexion process are a) define a task, b) generate a trajectory, c) evaluate, d) perform reflection, and e) generate the next trajectory</p>
+    <p class="mt-20 text-sm text-gray-600 text-center">The key steps of the Reflexion process are a) define a task, b) generate a trajectory, c) evaluate, d) perform reflection, and e) generate the next trajectory</p>
   </div>
 
 </div>
@@ -782,15 +819,35 @@ transition: fade-out
 
 Tool Module
 
-<div style="display: flex; justify-content: center;">
-  <img src="./image/chians.png" width="600" />
+
+
+<div grid="~ cols-2 gap-4 items-start">
+
+  <div class="flex flex-col items-center">
+    <img src="./image/chians.png" alt="ネットワーク図" width="600" />
+
+  </div>
+
+  <div class="flex flex-col items-center">
+    <img src="./image/tool_use_example.png" alt="ネットワーク図" width="600" />
+  </div>
+
 </div>
+
 
 <v-clicks depth="2">
 
 - Tools Module enables the agent to call upon external tools and resources for specific tasks
     -  Agent reasons about whether a tool is needed 
     -  If necessary, the agent selects and calls the appropriate tool.
+        - LLM generates text that fits with the API of the given tool.
+</v-clicks> 
+
+<v-clicks depth="2">
+
+<div class="flex flex-col items-center">
+    <img src="./image/tool_call.png" alt="ネットワーク図" width="400" />
+</div>
 </v-clicks> 
 
 ---
@@ -862,19 +919,131 @@ transition: fade-out
 
 Tool Learning
 
+- Tool Learning involves not only prompting LLMs for tool use but training them specifically for tool use.
+    - [Toolformer](https://arxiv.org/abs/2302.04761): model trained to decide which APIs to call and how
+
 <v-clicks depth="2">
 
 - Build training datasets containing a large amount of tool-use demonstration data
-> User Query: "What's the weather in Tokyo tomorrow?"
-
-> Agent Action 1: Call search_tool(query="weather Tokyo tomorrow")
-
-> Tool Output: "API response: JSON containing temperature, conditions, chance of rain for Tokyo, June 20th."
-
-> Agent Action 2: Extract "25°C, sunny, no rain" from the tool output.
-
-> Agent Response: "The weather in Tokyo tomorrow is expected to be 25°C and sunny with no rain."
-
-
 - The LLMs is trained using supervised learning to understand and imitate the tool operation processes shown in the demonstrations
 </v-clicks> 
+
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+<v-switch>
+      <template #1>
+        <img src="./image/tool_lrarning1.png" alt="Image 1" style="max-width: 550px;">
+      </template>
+      <template #2>
+        <img src="./image/tool_lrarning2.png" alt="Image 2" style="max-width: 550px;">
+      </template>
+      <template #3>
+        <img src="./image/tool_lrarning3.png" alt="Image 3" style="max-width: 550px;">
+      </template>
+      <template #4>
+        <img src="./image/tool_lrarning4.png" alt="Image 4" style="max-width: 350px;">
+      </template>
+</v-switch> 
+</div>
+
+
+---
+transition: fade-out
+---
+
+# Multi-Agent System
+
+
+<div class="flex flex-col items-center">
+    <img src="./image/multi-agents_compare.png" alt="ネットワーク図" width="600" />
+</div>
+
+
+---
+transition: fade-out
+---
+
+# Multi-Agent System
+
+Multi-Agent architectures
+
+<div class="flex flex-col items-center">
+    <img src="./image/multi-agent1.webp" alt="ネットワーク図" width="400" />
+</div>
+
+<div class="flex flex-col items-center">
+    <img src="./image/multi-agent2.webp" alt="ネットワーク図" width="400" />
+</div>
+
+
+---
+transition: fade-out
+---
+
+# Multi-Agent System
+
+Social Simulation
+
+<div grid="~ cols-2 gap-4 items-start">
+
+<v-clicks depth="2">
+
+- [Generative Agents](https://arxiv.org/abs/2304.03442): A simulated town environment was constructed using natural language, featuring multiple locations such as cafés, schools, and residential areas.
+
+- Multiple generative agents were deployed, each with unique background information, daily routines, and behavioral goals.
+
+- Without any predefined storylines, the agents spontaneously exhibited highly realistic social behaviors.
+</v-clicks> 
+
+<div class="flex justify-center">
+  <img src="./image/generative-ai.png" alt="ネットワーク図" width="600" />
+</div>
+
+</div>
+
+
+---
+transition: fade-out
+---
+
+# Multi-Agent System
+
+Social Simulation
+
+<div grid="~ cols-2 gap-4 items-start">
+
+<div class="flex flex-col items-center">
+    <img src="./image/generative-ai2.webp" alt="ネットワーク図" width="600" />
+    <p class="mt-2 text-sm text-gray-600 text-left">Agents possessed three core capabilities: memory, which allowed them to store and retrieve past experiences in natural language; reflection, through which they synthesized past experiences into higher-level insights to guide future actions; and planning, enabling them to create and adjust their daily schedules in response to changes in their surroundings.
+    </p>
+  </div>
+
+<div class="flex justify-center">
+  <img src="./image/generative-ai3.webp" alt="ネットワーク図" width="600" />
+</div>
+
+</div>
+
+---
+transition: fade-out
+---
+
+# Multi-Agent System
+
+Social Simulation
+
+<div class="flex justify-center">
+  <img src="./image/generative-ai4.webp" alt="ネットワーク図" width="600" />
+</div>
+
+
+
+---
+transition: fade-out
+---
+
+# Summary
+
+
+<div class="flex justify-center">
+  <img src="./image/agent_summary.webp" alt="ネットワーク図" width="700" />
+</div>
