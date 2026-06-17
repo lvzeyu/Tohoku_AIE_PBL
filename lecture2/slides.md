@@ -23,16 +23,16 @@ mdc: true
 
 fonts:
   # basically the text
-  sans: Robot
+  sans: Roboto
   # use with `font-serif` css class from UnoCSS
-  serif: Robot Slab
+  serif: Roboto Slab
   # for code blocks, inline code, etc.
   mono: Fira Code
 ---
 
 # Post-training
 
-Instruction of Finetuning, RLHF, and PEFT
+Instruction Fine-tuning, RLHF, and PEFT
 
 ZEYU LYU
 
@@ -57,7 +57,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 transition: fade-out
 ---
 
-# The traditional way: Fine-tuning for domain-specific task
+# The traditional way: Fine-tuning for domain-specific tasks
 
 <div grid="~ cols-2 gap-4 items-start">
 
@@ -71,7 +71,7 @@ transition: fade-out
     
     - **Cons**: Need a new large dataset for each task
 
-    - **Cons**: Potential for poor out-of distribution generalization
+    - **Cons**: Potential for poor out-of-distribution generalization
 
 </v-clicks>
 
@@ -98,7 +98,7 @@ transition: fade-out
 <v-clicks depth="2">
 
 - No training or optimization of the model parameters in the “adaptation step”.
-- Simply give the model a task description as well as none/one/few examples as the input at inference time.
+- Simply give the model a task description as well as zero/one/few examples as the input at inference time.
     -  The model's internal weights and parameters are not changed during ICL
 
 </v-clicks> 
@@ -127,7 +127,7 @@ transition: fade-out
 transition: fade-out
 ---
 
-# NLP tasks casted as word prediction
+# NLP tasks cast as word prediction
 
 <div class="flex justify-center">
   <img src="./image/T5.png" alt="ネットワーク図" width="900" />
@@ -196,7 +196,7 @@ transition: fade-out
 
 # Chain-of-thought prompting
 
-COT is an emergent property of model scale
+CoT is an emergent property of model scale
 
 
 <div class="flex justify-center">
@@ -210,7 +210,7 @@ transition: fade-out
 
 # Chain-of-thought prompting
 
-Zero-shot COT Prompting
+Zero-shot CoT Prompting
 
 
 <div class="flex justify-center">
@@ -224,7 +224,7 @@ transition: fade-out
 
 # Chain-of-thought prompting
 
-Zero-shot COT Prompting
+Zero-shot CoT Prompting
 
 
 <div class="flex justify-center">
@@ -236,7 +236,7 @@ Zero-shot COT Prompting
 transition: fade-out
 ---
 
-# Instruction finetunin
+# Instruction Fine-tuning
 
 
 - While pre-training LLMs on vast amounts of data allows them to learn about the world, they often struggle to respond to specific prompts or instructions.
@@ -247,7 +247,7 @@ transition: fade-out
 <v-clicks depth="2">
 
 - **Instruction fine-tuning** augments input-output examples with instructions, which enables instruction-tuned models to generalize more easily to new tasks.
-    - Collect examples of (instruction, output) pairs across many tasks and finetune an LM
+    - Collect examples of (instruction, output) pairs across many tasks and fine-tune an LM
 
 </v-clicks> 
 
@@ -262,7 +262,7 @@ transition: fade-out
 transition: fade-out
 ---
 
-# Instruction finetunin
+# Instruction Fine-tuning
 
 
 <div class="flex justify-center">
@@ -296,10 +296,10 @@ Instruction Fine-tuningが完了すると、モデルは「Instruct model (指�
 transition: fade-out
 ---
 
-# Instruction finetunin
+# Instruction Fine-tuning
 
 
-- Finetuning LM with some CoT data included in the mixture enables zero-shot CoT reasoning in unseen tasks.
+- Fine-tuning an LM with some CoT data included in the mixture enables zero-shot CoT reasoning in unseen tasks.
 
 <div class="flex justify-center">
   <img src="./image/instruct_compare.png" alt="ネットワーク図" width="700" />
@@ -318,8 +318,8 @@ Limitations
     - The LM's objective is Next-Token Prediction.
     - Human preferences are more nuanced and context-dependent. 
         - They involve factors like relevance, coherence, politeness, ethical considerations, and the overall helpfulness of the response.
-    - Even with instruction finetuning, there a mismatch between the LM objective and the objective of “satisfy human preferences”.
-        - LM's objective doesn't inherently teach the model to be truthful, helpful, harmless, unbiased, or to truly understand and fulfill a user's intentions. 
+    - Even with instruction fine-tuning, there is a mismatch between the LM objective and the objective of “satisfying human preferences”.
+        - The LM's objective doesn't inherently teach the model to be truthful, helpful, harmless, unbiased, or to truly understand and fulfill a user's intentions. 
 
 
 ---
@@ -383,12 +383,12 @@ transition: fade-out
 transition: fade-out
 ---
 
-# Parameter efficient fine-tuning (PEFT)
+# Parameter-efficient fine-tuning (PEFT)
 
 From fine-tuning to PEFT
 
 
-- Performing full-finetuning of LLMs is computationally intensive and time-consuming.
+- Performing full fine-tuning of LLMs is computationally intensive and time-consuming.
     - PEFT: Update a small subset of model parameters
 <div class="flex justify-center">
   <img src="./image/PEFT.png" alt="ネットワーク図" width="600" />
@@ -399,9 +399,9 @@ From fine-tuning to PEFT
 transition: fade-out
 ---
 
-# Parameter efficient fine-tuning (PEFT)
+# Parameter-efficient fine-tuning (PEFT)
 
-PEFT Method
+PEFT Methods
 
 <div class="flex justify-center">
   <img src="./image/PEFT_method.png" alt="ネットワーク図" width="600" />
@@ -412,9 +412,9 @@ PEFT Method
 transition: fade-out
 ---
 
-# Parameter efficient fine-tuning (PEFT)
+# Parameter-efficient fine-tuning (PEFT)
 
-Low-rank-parameterized update matrices(LoRA)
+Low-rank-parameterized update matrices (LoRA)
 
 <div class="flex justify-center">
   <img src="./image/lora_overview.png" alt="ネットワーク図" width="600" />
@@ -425,9 +425,9 @@ Low-rank-parameterized update matrices(LoRA)
 transition: fade-out
 ---
 
-# Parameter efficient fine-tuning (PEFT)
+# Parameter-efficient fine-tuning (PEFT)
 
-Low-rank-parameterized update matrices(LoRA)
+Low-rank-parameterized update matrices (LoRA)
 
 <div grid="~ cols-2 gap-4 items-start">
 
@@ -435,12 +435,12 @@ Low-rank-parameterized update matrices(LoRA)
 
 - Freeze most of the original LLM weights.
 
-- Inject 2 rank decomposition matircs
+- Inject two rank-decomposition matrices
 
-- Train the weights of the smaller matrics
+- Train the weights of the smaller matrices
 
 - Update the model for inference
-    - Matrix multiply the low rank matrics
+    - Multiply the low-rank matrices
     - Add the LoRA weights to the original weights
 </v-clicks> 
 
@@ -460,9 +460,9 @@ Low-rank-parameterized update matrices(LoRA)
 transition: fade-out
 ---
 
-# Parameter efficient fine-tuning (PEFT)
+# Parameter-efficient fine-tuning (PEFT)
 
-Concrete example using base Transformer as reference
+Concrete example using the base Transformer as reference
 
 <v-clicks depth="2">
 
@@ -486,9 +486,9 @@ Concrete example using base Transformer as reference
 transition: fade-out
 ---
 
-# Parameter efficient fine-tuning (PEFT)
+# Parameter-efficient fine-tuning (PEFT)
 
-The Performance of LoRA
+Performance of LoRA
 
 - LoRA matches or exceeds the fine-tuning baseline on all three datasets.
 <div class="flex justify-center">
@@ -532,7 +532,7 @@ QLoRA
 - The combination of PEFT and quantized language models enables resource-efficient fine-tuning of large language models: QLoRA (Quantized Low-Rank Adapter)
     - [peft](https://github.com/huggingface/peft): Adds PEFT layers directly to models loaded with ```transformers```
     - [bitsandbytes](https://github.com/bitsandbytes-foundation/bitsandbytes): Supports quantization and efficient matrix operations
-    - [Transformers](https://github.com/huggingface/transformers):Supports loading quantized models and building LLMs for fine-tuning
+    - [Transformers](https://github.com/huggingface/transformers): Supports loading quantized models and building LLMs for fine-tuning
 
 </v-clicks> 
 
@@ -551,7 +551,7 @@ bnb_config = BitsAndBytesConfig(
 ```
 
 ```ts {*|5|*}
-#Load the Quantized Model
+# Load the Quantized Model
 from transformers import AutoModelForCausalLM
 model = AutoModelForCausalLM.from_pretrained(
     "meta-llama/Llama-2-7b-hf",
@@ -561,7 +561,7 @@ model = AutoModelForCausalLM.from_pretrained(
 ```
 
 ```ts {*|4|*}
-#Define PEFT Configuration (LoRA)
+# Define PEFT Configuration (LoRA)
 from peft import get_peft_model, LoraConfig, TaskType
 lora_config = LoraConfig(
     r=8,
@@ -576,7 +576,7 @@ model = get_peft_model(base_model, lora_config)
 ```
 
 ```ts
-#Insert LoRA Adapters
+# Insert LoRA Adapters
 model = get_peft_model(model, lora_config)
 
 ```
@@ -591,12 +591,11 @@ transition: fade-out
 
 # Summary
 
-- The scability of LLMs enable the in-context learning that handle tasks simply by providing examples within the prompt.
+- The scalability of LLMs enables in-context learning, which handles tasks simply by providing examples within the prompt.
     - The quality, clarity, and structure of that prompt directly affect the model's ability to "learn" and perform the desired task.
-    - Chain-of-Thought (CoT) Prompting is particulary useful in complex reasoning tasks
-- Post-training techniques play a crucial role in enhancing its capabilities, alignment, and task generalization of LLMs
+    - Chain-of-Thought (CoT) prompting is particularly useful in complex reasoning tasks
+- Post-training techniques play a crucial role in enhancing the capabilities, alignment, and task generalization of LLMs
     - SFT: Adapt to specific tasks/domains
-        - Instruction Fine-Tuning: Improve ability to follow natural language instructions and generalize.
+        - Instruction Fine-Tuning: Improve the ability to follow natural language instructions and generalize.
     - RLHF: Align with human preferences
-- QLoRA is widely applied method for fine-tuning LLMs.
-
+- QLoRA is a widely applied method for fine-tuning LLMs.

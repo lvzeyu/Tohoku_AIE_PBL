@@ -23,16 +23,16 @@ mdc: true
 
 fonts:
   # basically the text
-  sans: Robot
+  sans: Roboto
   # use with `font-serif` css class from UnoCSS
-  serif: Robot Slab
+  serif: Roboto Slab
   # for code blocks, inline code, etc.
   mono: Fira Code
 ---
 
-# Advanced Application of LLMs
+# Advanced Applications of LLMs
 
-RAG and LLM-based Agent
+RAG and LLM-based Agents
 
 ZEYU LYU
 
@@ -57,7 +57,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 transition: fade-out
 ---
 
-# LLMs have difficulty
+# LLMs Have Difficulties
 
 
 <v-clicks depth="2">
@@ -78,7 +78,7 @@ transition: fade-out
 transition: fade-out
 ---
 
-# Retrieval Augmented Generation(RAG)
+# Retrieval-Augmented Generation (RAG)
 
 The Basis of RAG
 
@@ -86,9 +86,9 @@ The Basis of RAG
 
 <v-clicks depth="2">
 
-- **Limitations and inefficient knowledge encoding of LLMs training**
-    -  LLMs needs to be exposed to the same knowledge point up to 1000 times in the pre-training data for accurate memorization [(Allen-Zhu and Li, 2024)](https://arxiv.org/abs/2404.05405)
-    - GPT-4 Turbo achieved only 73.6% in a knowledge memorization test for undergraduate knowledge[(Zhang et al., 2023)](https://arxiv.org/abs/2312.07398)
+- **Limitations and inefficient knowledge encoding in LLM training**
+    -  LLMs need to be exposed to the same knowledge point up to 1000 times in the pre-training data for accurate memorization [(Allen-Zhu and Li, 2024)](https://arxiv.org/abs/2404.05405)
+    - GPT-4 Turbo achieved only 73.6% in a knowledge memorization test for undergraduate knowledge [(Zhang et al., 2023)](https://arxiv.org/abs/2312.07398)
 </v-clicks> 
 
 <div class="flex justify-center">
@@ -133,7 +133,7 @@ layout: center
 clicks: 5 # Total number of click steps to reveal all content
 ---
 
-# Retrieval Augmented Generation(RAG)
+# Retrieval-Augmented Generation (RAG)
 
 
 
@@ -189,7 +189,7 @@ clicks: 5 # Total number of click steps to reveal all content
 transition: fade-out
 ---
 
-# Retrieval Augmented Generation(RAG)
+# Retrieval-Augmented Generation (RAG)
 
 The workflow of RAG
 
@@ -203,7 +203,7 @@ The workflow of RAG
 transition: fade-out
 ---
 
-# Retrieval Augmented Generation(RAG)
+# Retrieval-Augmented Generation (RAG)
 
 RAG Task Categorization
 
@@ -243,7 +243,7 @@ RAG Task Categorization
 transition: fade-out
 ---
 
-# Retrieval Augmented Generation(RAG)
+# Retrieval-Augmented Generation (RAG)
 
 Modular RAG
 
@@ -271,7 +271,7 @@ RAGシステムにおいて「索引（Index）」は文書を「管理可能な
 transition: fade-out
 ---
 
-# Retrieval Augmented Generation(RAG)
+# Retrieval-Augmented Generation (RAG)
 
 RAG Evaluation
 
@@ -279,13 +279,13 @@ RAG Evaluation
   <img src="./image/rag-eval.png" alt="ネットワーク図" width="650" />
 </div>
 
-- Consider not only the relevance of the search results but also to evaluate them from various perspectives such as their accuracy and reliability.
+- Consider not only the relevance of the search results but also evaluate them from various perspectives such as their accuracy and reliability.
 
 ---
 transition: fade-out
 ---
 
-# Retrieval Augmented Generation(RAG)
+# Retrieval-Augmented Generation (RAG)
 
 Applications of RAG
 
@@ -305,7 +305,7 @@ Applications of RAG
 
 
 <!--
-SerachGPT:AI生成による 自然言語の回答＋出典リンク を提供し、会話的に検索しやすくするための機能です 。
+SearchGPT:AI生成による 自然言語の回答＋出典リンク を提供し、会話的に検索しやすくするための機能です 。
 - 質問→回答→続けて関連する質問、というフローで文脈を保持しながら検索可能 
 - Bing等の最新ウェブ情報を参照。ニュース、株価、天気、スポーツ情報などに対応 
 - 回答内に出典リンクを明示し、それらの信頼性確認が容易 。
@@ -316,7 +316,7 @@ SerachGPT:AI生成による 自然言語の回答＋出典リンク を提供し
 transition: fade-out
 ---
 
-# LLMs-based Agent
+# LLM-based Agents
 
 What is AI Agent?
 
@@ -324,9 +324,9 @@ What is AI Agent?
 
 <v-clicks depth="2">
 
-- Agent is a system designed to autonomously perceive its environment, reason, plan, act to achieve specific goals, and learn/adapt from the outcomes of its actions.
+- An agent is a system designed to autonomously perceive its environment, reason, plan, act to achieve specific goals, and learn/adapt from the outcomes of its actions.
 
-- LLM-based agent can understand and generate natural language, reason, access external tools or data, and interact autonomously to achieve complex goals.
+- An LLM-based agent can understand and generate natural language, reason, access external tools or data, and interact autonomously to achieve complex goals.
 </v-clicks> 
 
 <div class="flex justify-center">
@@ -352,7 +352,7 @@ LLMの能力を外部ツールと組み合わせることで、自身の知識�
 transition: fade-out
 ---
 
-# LLMs-based Agent
+# LLM-based Agents
 
 Example of LLM-based Agent
 
@@ -380,9 +380,9 @@ Example of LLM-based Agent
 transition: fade-out
 ---
 
-# LLMs-based Agent
+# LLM-based Agents
 
-Framework of LLMs-based Agent
+Framework of LLM-based Agents
 
 
 <div grid="~ cols-2 gap-4">
@@ -393,9 +393,9 @@ Framework of LLMs-based Agent
 
 - 🧠 Think: Based on observed environmental states and task inputs, the agent models the task's intention, plans strategies, and makes decisions through reasoning.
 
-- ⚙️ Act: LLM Agent can perform actions such as enerating responses and calling external tools
+- ⚙️ Act: An LLM agent can perform actions such as generating responses and calling external tools
 
-- 🧾 Memory: LLM Agent can store, organize, and retrieve past interaction records, knowledge fragments, or environmental states.
+- 🧾 Memory: An LLM agent can store, organize, and retrieve past interaction records, knowledge fragments, or environmental states.
 
 </div>
 
@@ -433,9 +433,9 @@ Framework of LLMs-based Agent
 transition: fade-out
 ---
 
-# LLMs-based Agent
+# LLM-based Agents
 
-Framework of LLMs-based Agent
+Framework of LLM-based Agents
 
  <div class="flex flex-col items-center">
     <img src="./image/llm_and_agent.webp" alt="ネットワーク図" width="520" />
@@ -444,13 +444,13 @@ Framework of LLMs-based Agent
 
  <div class="flex flex-col items-center">
     <img src="./image/llm_and_agent2.webp" alt="ネットワーク図" width="520" />
-    <p class="mt-2 text-sm text-gray-600 text-center">LLMs-based Agent</p>
+    <p class="mt-2 text-sm text-gray-600 text-center">LLM-based Agent</p>
   </div>
 ---
 transition: fade-out
 ---
 
-# LLMs-based Agent
+# LLM-based Agents
 
 Perception
 
@@ -458,7 +458,7 @@ Perception
 
 - LLM agents demonstrate impressive capabilities in textual interaction, including parsing commands, generating responses, and engaging in multi-turn dialogues.
    - To enable more personalized and accurate interactions, reinforcement learning and feedback mechanisms are used to help agents infer users' implicit preferences.
-- Multimodl observation
+- Multimodal observation
    - Image Captioning: Converts visual input into descriptive text, offering a simple yet interpretable way to process images.
    - Integration with Visual Encoders: LLMs can be paired with visual encoders through a trainable interface layer, enhancing their ability to perceive and understand visual information.
    -  LLM agents are expected to incorporate additional sensory modalities—such as touch and smell—to further expand their perceptual and interactive capabilities.
@@ -482,13 +482,13 @@ LLMエージェントは、自然言語による命令の解析（command parsin
 transition: fade-out
 ---
 
-# LLMs-based Agent
+# LLM-based Agents
 
 Reasoning
 
 
 - Reasoning is the "thinking" component that allows an LLM agent to go beyond simple information retrieval or direct response generation
-    - Process information logically, make inferences, formulate plans, and solve complex problems
+    - Processes information logically, makes inferences, formulates plans, and solves complex problems
 
 <div style="display: flex; justify-content: center;">
   <img src="./image/reasoning_llm.png" width="500" />
@@ -504,7 +504,7 @@ LLMエージェントのReasoning（推論能力）は、人間のように論�
 transition: fade-out
 ---
 
-# LLMs-based Agent
+# LLM-based Agents
 
 ReAct
 
@@ -513,8 +513,8 @@ ReAct
 
 <v-clicks depth="2">
 
-- ReAct is inspired by the synergies between "acting" and "reasoning" which allow humans to learn new tasks and make decisions or reasoning.
-- Perform dynamic reasoning to create, maintain, and adjust plans for acting while also enabling interaction to external environments to incorporate additional information into the reasoning. 
+- ReAct is inspired by the synergies between "acting" and "reasoning", which allow humans to learn new tasks, make decisions, and reason.
+- It performs dynamic reasoning to create, maintain, and adjust plans for acting while also enabling interaction with external environments to incorporate additional information into the reasoning. 
     - Thought - A reasoning step about the current situation
     - Action - A set of actions to execute (e.g., tools)
     - Observation - A reasoning step about the result of the action
@@ -551,7 +551,7 @@ ReActは以下のようなサイクルで動作します：
 transition: fade-out
 ---
 
-# LLMs-based Agent
+# LLM-based Agents
 
 ReAct
 
@@ -560,12 +560,12 @@ ReAct
 
   <div class="flex flex-col items-center">
     <img src="./image/react_prompt.png" alt="ネットワーク図" width="600" />
-    <p class="mt-2 text-sm text-gray-600 text-center">ReAct achieves 「Reasoning + Acting」through carefully designed prompt engineering</p>
+    <p class="mt-2 text-sm text-gray-600 text-center">ReAct achieves 「Reasoning + Acting」through carefully designed prompt engineering.</p>
   </div>
 
   <div class="flex flex-col items-center">
     <img src="./image/react_prompt2.png" alt="ネットワーク図" width="600" />
-    <p class="mt-2 text-sm text-gray-600 text-center">ReAct　continues 「Reasoning + Acting」 process iteratively until an action explicitly instructs the model to return the final answer..</p>
+    <p class="mt-2 text-sm text-gray-600 text-center">ReAct continues the 「Reasoning + Acting」 process iteratively until an action explicitly instructs the model to return the final answer.</p>
   </div>
 
 </div>
@@ -575,7 +575,7 @@ ReAct
 transition: fade-out
 ---
 
-# LLMs-based Agent
+# LLM-based Agents
 
 ReAct
 
@@ -597,7 +597,7 @@ ReAct
 transition: fade-out
 ---
 
-# LLMs-based Agent
+# LLM-based Agents
 
 Planning
 
@@ -607,7 +607,7 @@ Planning
 
 <div class="flex flex-col items-center">
     <img src="./image/planning_example.png" alt="ネットワーク図" width="600" />
-    <p class="mt-2 text-sm text-gray-600 text-center"> Planning module allows the model to iteratively reflect on past behavior and update the current plan if necessary.</p>
+    <p class="mt-2 text-sm text-gray-600 text-center">The planning module allows the model to iteratively reflect on past behavior and update the current plan if necessary.</p>
 </div>
 
 
@@ -645,7 +645,7 @@ LLMが自然言語の問題文をPDDLに変換、古典的プランナーがPDDL
 transition: fade-out
 ---
 
-# LLMs-based Agent
+# LLM-based Agents
 
 Planning
 
@@ -653,7 +653,7 @@ Planning
   <img src="./image/webagent.png" alt="ネットワーク図" width="700" />
 </div>
 
-- [Mind2Web](https://arxiv.org/abs/2306.06070)：benchmark designed to evaluate whether agents can accurately perform multi-step tasks on real-world web pages (e.g., booking hotels, ordering products, extracting information).
+- [Mind2Web](https://arxiv.org/abs/2306.06070): A benchmark designed to evaluate whether agents can accurately perform multi-step tasks on real-world web pages (e.g., booking hotels, ordering products, extracting information).
 
 
 <!--
@@ -666,11 +666,11 @@ Planning
 transition: fade-out
 ---
 
-# LLMs-based Agent
+# LLM-based Agents
 
 Memory Module
 
-- Agents can maintain contextual coherence in continuous tasks and make more accurate judgments and decisions based on past experiences with memory module.
+- Agents can maintain contextual coherence in continuous tasks and make more accurate judgments and decisions based on past experiences with a memory module.
 
 - Short-term memory is typically implemented by embedding memory content as prompts directly within the LLM's input context.
 
@@ -691,7 +691,7 @@ Memory Module
 transition: fade-out
 ---
 
-# LLMs-based Agent
+# LLM-based Agents
 
 Memory Module
 
@@ -732,9 +732,9 @@ transition: slide-up
 level: 2
 ---
 
-# LLMs-based Agent
+# LLM-based Agents
 
-Use memory module with langchain
+Use the memory module with LangChain
 
 - ConversationBufferMemory: store the entire conversation history between a user and an agent in a simple buffer (i.e., a list of messages).
 
@@ -825,7 +825,7 @@ LLM を中心とするアプリケーション（Agent、RAG、チャットボ�
 transition: fade-out
 ---
 
-# LLMs-based Agent
+# LLM-based Agents
 
 Memory Reflexion
 
@@ -838,7 +838,7 @@ Memory Reflexion
 
   <div class="flex flex-col items-center mt-12">
     <img src="./image/reflexion-examples.png" alt="ネットワーク図" width="600" />
-    <p class="mt-20 text-sm text-gray-600 text-center">The key steps of the Reflexion process are a) define a task, b) generate a trajectory, c) evaluate, d) perform reflection, and e) generate the next trajectory</p>
+    <p class="mt-20 text-sm text-gray-600 text-center">The key steps of the Reflexion process are a) define a task, b) generate a trajectory, c) evaluate, d) perform reflection, and e) generate the next trajectory.</p>
   </div>
 
 </div>
@@ -864,7 +864,7 @@ Memory Reflexion
 transition: fade-out
 ---
 
-# LLMs-based Agent
+# LLM-based Agents
 
 Tool Module
 
@@ -886,7 +886,7 @@ Tool Module
 
 <v-clicks depth="2">
 
-- Tools Module enables the agent to call upon external tools and resources for specific tasks
+- The tools module enables the agent to call upon external tools and resources for specific tasks
     -  Agent reasons about whether a tool is needed 
     -  If necessary, the agent selects and calls the appropriate tool.
         - LLM generates text that fits with the API of the given tool.
@@ -904,9 +904,9 @@ transition: slide-up
 level: 2
 ---
 
-# LLMs-based Agent
+# LLM-based Agents
 
-Use tool module with langchain
+Use the tool module with LangChain
 
 
 ````md magic-move {lines: true}
@@ -927,7 +927,7 @@ agent = initialize_agent(tools,
 ```
 
 ```ts {*|5|*}
-#load quantized LLMs
+# Load quantized LLMs
 from transformers import AutoModelForCausalLM
 model = AutoModelForCausalLM.from_pretrained(
     "meta-llama/Llama-2-7b-hf",
@@ -964,17 +964,17 @@ Final Answer: 36
 transition: fade-out
 ---
 
-# LLMs-based Agent
+# LLM-based Agents
 
 Tool Learning
 
-- Tool Learning involves not only prompting LLMs for tool use but training them specifically for tool use.
-    - [Toolformer](https://arxiv.org/abs/2302.04761): model trained to decide which APIs to call and how
+- Tool learning involves not only prompting LLMs for tool use but also training them specifically for tool use.
+    - [Toolformer](https://arxiv.org/abs/2302.04761): A model trained to decide which APIs to call and how
 
 <v-clicks depth="2">
 
 - Build training datasets containing a large amount of tool-use demonstration data
-- The LLMs is trained using supervised learning to understand and imitate the tool operation processes shown in the demonstrations
+- The LLM is trained using supervised learning to understand and imitate the tool operation processes shown in the demonstrations
 </v-clicks> 
 
 <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
@@ -1041,6 +1041,8 @@ Social Simulation
 - Multiple generative agents were deployed, each with unique background information, daily routines, and behavioral goals.
 
 - Without any predefined storylines, the agents spontaneously exhibited highly realistic social behaviors.
+
+- [Demo](https://reverie.herokuapp.com/arXiv_Demo/)
 </v-clicks> 
 
 <div class="flex justify-center">

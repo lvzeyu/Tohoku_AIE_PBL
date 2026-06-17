@@ -23,9 +23,9 @@ mdc: true
 
 fonts:
   # basically the text
-  sans: Robot
+  sans: Roboto
   # use with `font-serif` css class from UnoCSS
-  serif: Robot Slab
+  serif: Roboto Slab
   # for code blocks, inline code, etc.
   mono: Fira Code
 ---
@@ -65,16 +65,16 @@ LLMs Basics
 
     - 💡 High-level explanations of the fundamental concepts behind LLMs
     - ⭐️ Insights into the transformer architecture
-    - 🧑‍💻 Application of LLMs using Transformers library and HuggingFace Hub
+    - 🧑‍💻 Applications of LLMs using the Transformers library and Hugging Face Hub
 
 - **Lecture 2**
 
-    - 📝 Prompting and In-context Learning of LLMs
+    - 📝 Prompting and in-context learning of LLMs
     - 🔧 Fine-tuning LLMs
 
 - **Lecture 3** 
    
-    - 🤖 Applications of LLMs Agents
+    - 🤖 Applications of LLM Agents
 
 </v-clicks>
 
@@ -119,19 +119,19 @@ level: 2
 
 # LLMs Basics
 
-What is LLMs?
+What are LLMs?
 
 <v-clicks depth="2">
 
 - LLMs are deep neural networks trained on massive amounts of text data, designed to understand, generate, and respond to human-like text.
     - ***Large* refers to both the model's size in terms of parameters and the dataset**
-        - LLMs often involves billions of parameters
-        - LLMs were trained on a large amount of texts
+        - LLMs often involve billions of parameters
+        - LLMs were trained on a large amount of text
     - **LLMs are capable of *generating text***
         - LLMs are often referred to as a form of generative AI.
-        - LLMs can handle various task including answering questions, writing essays, translating languages through text generation
+        - LLMs can handle various tasks including answering questions, writing essays, and translating languages through text generation
     - **LLMs utilize an architecture called the *Transformer***
-        - Transformer  enables efficient processing of language by capturing complex patterns and relationships across long text sequences
+        - The Transformer enables efficient processing of language by capturing complex patterns and relationships across long text sequences
 
 </v-clicks>
 
@@ -162,10 +162,10 @@ What is GPT?
 <v-clicks depth="2">
 
 - G: **G**enerative model
-    - GPT are trained to predict the next word in a sequence
+    - GPT models are trained to predict the next word in a sequence
 - P: **P**re-trained
     - GPT models undergo an extensive training phase on a massive dataset of text
-    - Pre-trained allows model to learn a vast amount of linguistic patterns, facts, reasoning abilities, and general knowledge.
+    - Pre-training allows models to learn a vast amount of linguistic patterns, facts, reasoning abilities, and general knowledge.
 - T: **T**ransformer
     - GPT models are built on the Transformer architecture
 
@@ -179,9 +179,9 @@ level: 2
 
 # LLMs Basics
 
-Language Models(LMs)
+Language Models (LMs)
 
-- LMs  designed to understand and generate human language by assigning probabilities to sequences of words
+- LMs are designed to understand and generate human language by assigning probabilities to sequences of words
     - **Setup**: Assume a vocabulary of words  
   $$
   V = \{W_1, W_2, W_3, \ldots, W_n\}
@@ -249,7 +249,7 @@ Transformer
 <v-clicks depth="2">
 
 - The Transformer has significantly advanced the field of NLP and is applied across a wide range of large language models.
-- **Self-attention** mechanism allows the model to compute the relevance of each element in a sequence and use this information to understand the context. 
+- The **self-attention** mechanism allows the model to compute the relevance of each element in a sequence and use this information to understand the context. 
     - Handling of **Long-Range Dependencies**
     - **Parallelization** for training truly "large" language models
 </v-clicks>
@@ -280,9 +280,9 @@ Seq2seq
 - The Transformer is a type of **Seq2seq (Sequence-to-Sequence)** model
 - A Seq2Seq model is an architecture designed to transform an input sequence into an output sequence
 
-    - **Encoder**: Process the input sequence and compress its information into a fixed-size representation called the context vector
+    - **Encoder**: Processes the input sequence and compresses its information into a fixed-size representation called the context vector
     
-    - **Decoder**: Use encoded information (context vector) to generate the output sequence.
+    - **Decoder**: Uses encoded information (context vector) to generate the output sequence.
 
 </v-clicks>
 
@@ -350,7 +350,7 @@ N-gram Language Model
 <v-clicks depth="2">
 
 - An N-gram is a contiguous sequence of $N$ items from a given text.
-- N-gram language model refers to a probabilistic model that can estimate the probability of a word given the $n-1$ previous words.
+- An N-gram language model refers to a probabilistic model that can estimate the probability of a word given the $n-1$ previous words.
 </v-clicks>
 
 </div>
@@ -431,7 +431,7 @@ transition: slide-up
 level: 2
 ---
 
-# Language Model with RNNs
+# Language Models with RNNs
 
 Recurrent Neural Networks (RNNs)
 
@@ -441,7 +441,7 @@ Recurrent Neural Networks (RNNs)
 
 <v-clicks depth="2">
 
-- Compute an output $y_t$ for an input $x_t$ requires activation value for the hidden layer $h_t$.
+- Computing an output $y_t$ for an input $x_t$ requires the activation value for the hidden layer $h_t$.
     - $h_t$ is calculated based on the input $x_t$ and the hidden layer from the previous time step $h_{t-1}$.
 </v-clicks>
 
@@ -460,7 +460,7 @@ Recurrent Neural Networks (RNNs)
 
 <v-clicks depth="2">
 
-- Computation at time $t$ requires the value of the hidden layer from time $t − 1$ mandates an incremental inference algorithm that proceeds from the start of the sequence to the end. 
+- Computation at time $t$ requires the value of the hidden layer from time $t − 1$, which mandates an incremental inference algorithm that proceeds from the start of the sequence to the end. 
 </v-clicks>
 
 </div>
@@ -506,7 +506,7 @@ transition: slide-up
 level: 2
 ---
 
-# Language Model with RNNs
+# Language Models with RNNs
 
 Recurrent Neural Networks (RNNs)
 
@@ -542,7 +542,7 @@ transition: slide-up
 level: 2
 ---
 
-# Language Model with RNNs
+# Language Models with RNNs
 
 Recurrent Neural Networks (RNNs)
 
@@ -551,7 +551,7 @@ Recurrent Neural Networks (RNNs)
 - Advantages of RNN LMs
     - **Contextual Understanding**: RNNs can capture longer dependencies in the text when making predictions.
     - **Dynamic Computation**: RNNs can handle input sequences of varying lengths without needing to predefine a fixed size.
-- Disadvantages of RNN LMs: In a encoder-decoder model with RNNs LMs, the hidden state of the last time step represents absolutely everything about the meaning of the source text.
+- Disadvantages of RNN LMs: In an encoder-decoder model with RNN LMs, the hidden state of the last time step represents everything about the meaning of the source text.
     - Sequential nature of RNNs means recurrent computation is slow.
     - Information at the beginning of the sentence, especially for long sentences, may not be equally well represented in the context vector.
 
@@ -606,7 +606,7 @@ transition: slide-up
 level: 2
 ---
 
-# The Principle of Transformer
+# The Principle of the Transformer
 
 Attention Mechanism
 
@@ -635,7 +635,7 @@ transition: slide-up
 level: 2
 ---
 
-# The Principle of Transformer
+# The Principle of the Transformer
 
 Attention Mechanism
 
@@ -662,7 +662,7 @@ transition: slide-up
 level: 2
 ---
 
-# The Principle of Transformer
+# The Principle of the Transformer
 
 Attention Mechanism
 
@@ -689,7 +689,7 @@ transition: slide-up
 level: 2
 ---
 
-# The Principle of Transformer
+# The Principle of the Transformer
 
 Self-Attention
 
@@ -699,12 +699,12 @@ Self-Attention
 
 <v-clicks depth="2">
 
-- Create three vectors query, key, and value from each of the embeddings of each word
+- Create three vectors: query, key, and value, from each of the embeddings of each word
 - $$W^Q, W^K, W^V \in R^{d_{model} \times d_k}$$
 
-- Calculate attention scores between each word of the input sentence against a specific word
+- Calculate attention scores between each word of the input sentence and a specific word
 
-- $$Attention(\mathbf{Q},\mathbf{K},\mathbf{V})=softmax(\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{d_k}})V$$
+- $$Attention(\mathbf{Q},\mathbf{K},\mathbf{V})=softmax(\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{d_k}})\mathbf{V}$$
 </v-clicks>
 
 </div>
@@ -722,7 +722,7 @@ transition: slide-up
 level: 2
 ---
 
-# The Principle of Transformer
+# The Principle of the Transformer
 
 Attention Mechanism
 
@@ -732,7 +732,7 @@ Attention Mechanism
 
 <v-clicks depth="2">
 
-- Scale the attention scores, take the softmax, and then multiply the result by $V$ resulting in a matrix of shape $N \times d$: a vector embedding representation for each token in the input.
+- Scale the attention scores, take the softmax, and then multiply the result by $V$, resulting in a matrix of shape $N \times d$: a vector embedding representation for each token in the input.
 
 </v-clicks>
 
@@ -746,7 +746,7 @@ transition: slide-up
 level: 2
 ---
 
-# The Principle of Transformer
+# The Principle of the Transformer
 
 Attention Mechanism
 
@@ -768,7 +768,7 @@ transition: slide-up
 level: 2
 ---
 
-# The Principle of Transformer
+# The Principle of the Transformer
 
 Self-Attention
 
@@ -830,7 +830,7 @@ transition: slide-up
 level: 2
 ---
 
-# The Principle of Transformer
+# The Principle of the Transformer
 
 Self-Attention
 
@@ -842,7 +842,7 @@ Self-Attention
 
 - Each attention score quantifies how relevant every other word (or token) in the sequence is to a given word.
 
-- If an attention mechanism assigns a high weight to a particular word when processing another word or making a prediction, it suggests that those highly-weighted words are important for the model's decision. 
+- If an attention mechanism assigns a high weight to a particular word when processing another word or making a prediction, it suggests that those highly weighted words are important for the model's decision. 
 
 </v-clicks>
 
@@ -859,7 +859,7 @@ transition: slide-up
 level: 2
 ---
 
-# The Principle of Transformer
+# The Principle of the Transformer
 
 Components in Transformer Architecture
 
@@ -931,7 +931,7 @@ transition: slide-up
 level: 2
 ---
 
-# LLMs with Transformer
+# LLMs with the Transformer
 
 
 <div class="flex justify-center">
@@ -950,7 +950,7 @@ transition: slide-up
 level: 2
 ---
 
-# Practive
+# Practice
 
 - [Hugging Face Transformers Tutorial](https://colab.research.google.com/github/lvzeyu/Tohoku_AIE_PBL/blob/main/lecture1/notebook/Hugging%20Face%20Transformers%20Tutorial.ipynb)
 
