@@ -1087,6 +1087,187 @@ Social Simulation
 </div>
 
 
+---
+layout: default
+---
+
+<!-- # LLMs Agentを用いる社会シミュレーションの問題点 -->
+# Challenges of Social Simulation with LLM Agents
+
+
+<v-clicks depth="2">
+
+<!-- - 学習データや設計による**LLMのバイアス** -->
+- **LLM Bias** from Training Data and Design
+    <!-- - LLMを用いて人間行動や意思決定を再現する際には、**特定の社会属性（性別・人種など）や政治的立場に関する表現・判断が偏る傾向**がある -->
+    - When using LLMs to replicate human behavior and decision-making, **representations and judgments tend to be skewed toward certain social attributes (e.g., gender, race) and political stances** [(Kotek et al., 2023](https://dl.acm.org/doi/10.1145/3582269.3615599);[Bang et al., 2024](https://arxiv.org/abs/2403.18932))
+    <!-- - LLMは、集団を単一の「典型像」として表象してしまい、**集団内の異質性が失われやすい** -->
+    - LLMs tend to represent groups as a single "typical profile," making **within-group heterogeneity easily lost** ([Wang et al., 2025](https://www.nature.com/articles/s42256-025-00986-z);[Bisbee et al., 2024](https://www.cambridge.org/core/journals/political-analysis/article/synthetic-replacements-for-human-survey-data-the-perils-of-large-language-models/B92267DC26195C7F36E63EA04A47D2FE))
+    <!-- - 学習データには虚構的な場面の記述も含まれるため、LLMの出力が必ずしも現実社会の状況を正確に反映するとは限らない -->
+    - Because training data includes descriptions of fictional scenarios, LLM outputs do not necessarily accurately reflect real-world conditions [(Kozlowski & Evans, 2025)](https://journals.sagepub.com/doi/10.1177/00491241251337316)
+<!-- - 再現性と透明性はLLMs Agentを用いる社会シミュレーションにおいても問題視されている -->
+- Reproducibility and transparency are also recognized as problems in social simulation with LLM agents
+   <!-- - 同じ設定でも、モデルやプロンプトの調整次第で結果が大きく変わることがある -->
+   - Even with identical settings, results can vary significantly depending on model and prompt adjustments [(Bisbee et al., 2024)](https://www.cambridge.org/core/journals/political-analysis/article/synthetic-replacements-for-human-survey-data-the-perils-of-large-language-models/B92267DC26195C7F36E63EA04A47D2FE)
+   <!-- - 学習データと学習プロセスを公開しないLLMも多くある -->
+   - Many LLMs do not disclose their training data or training process
+      <!-- - 多くのLLMは「無害化」方向に調整されたかもしれんが、その影響で一部の社会シミュレーションには不向きな場合もある -->
+      - Many LLMs may have been aligned toward "harmlessness," which can make them unsuitable for certain social simulations [(Bail, 2024)](https://www.pnas.org/doi/10.1073/pnas.2314021121)
+
+</v-clicks>
+
+---
+layout: two-cols-header
+---
+
+:: header ::
+
+<!-- # 社会シミュレーションと実証データの結合 -->
+# Integrating Social Simulation with Empirical Data
+
+:: left ::
+
+### Agent Bank [(Park et al., 2024)](https://arxiv.org/abs/2411.10109)
+
+<!-- - **基本的アイデア**：特定の実在個人に関する詳細な情報を収集してLLMに与えることで、その人物をより確実に模したLLMエージェントを作成できる -->
+- **Core Idea**: By collecting detailed information about specific real individuals and providing it to an LLM, we can create LLM agents that more faithfully simulate those individuals
+<!-- - AIによるインタビュアーを実施し、そのインタビュー記録を”Agentの記憶”としてプロンプトに入れる -->
+- Conduct AI-led interviews and inject the interview transcripts into the prompt as the agent's “memory”
+<!-- - 作成されたAgentに質問し、その回答結果を該当する人間と比較することで、Agentの性能を評価する -->
+- Evaluate agent performance by asking the created agent questions and comparing its responses to those of the actual individual
+    <!-- - General Social Surveyの質問への回答では、提案手法のほうがより整合性の高い結果を得た -->
+    - On General Social Survey questions, the proposed method achieved more consistent results
+
+<AdmonitionType type=”important” width=”500px”>
+<!-- 実証データを組み込むプロンプト設計により、人間の振る舞いをより高精度に再現することが可能となる -->
+Prompt design that incorporates empirical data enables more accurate reproduction of human behavior
+</AdmonitionType>
+
+:: right ::
+
+<div style="display: flex; justify-content: center;">
+  <img src="./image/agent_bank.png" width="360" />
+</div>
+
+<div style="display: flex; justify-content: center;">
+  <img src="./image/agent_bank_results.png" width="360" />
+</div>
+
+
+---
+layout: default
+---
+
+<!-- # 社会科学研究に向けてLLMsのファインチューニング -->
+# Fine-Tuning LLMs for Social Science Research
+
+
+<!-- - 蓄積された社会科学研究データを学習データとして用い、社会科学研究に特化したLLMを作成する試み -->
+- Efforts to create LLMs specialized for social science research by using accumulated social science data as training data ([Kolluri et al., 2025](https://aclanthology.org/2025.emnlp-main.1530.pdf);[Suh et al., 2025](https://aclanthology.org/2025.acl-long.1028.pdf))
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; align-items: start;">
+  <div style="display: flex; justify-content: center;">
+    <img src="./image/llm_social_ft1.png" width="350" />
+  </div>
+  <div style="display: flex; flex-direction: column; align-items: center;">
+    <img src="./image/llm_social_ft2.png" width="360" />
+    <!-- <p>Kolluri et al., (2025)では、大量の社会科学実験に基づく「デモグラ（persona）＋実験条件（condition）＋アウトカム質問（outcome）→回答（response）」といった標準化データセットを構築し、それを用いてオープンソースLLMをファインチューニングすることでGPT-4oを超える性能を達成した</p> -->
+    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Kolluri et al. (2025) constructed a standardized dataset based on a large number of social science experiments — structured as "demographics (persona) + experimental condition + outcome question → response" — and used it to fine-tune an open-source LLM, achieving performance surpassing GPT-4o</p>
+  </div>
+</div>
+
+
+---
+layout: default
+---
+
+<!-- # ファインチューニングの問題点 -->
+# Limitations of Fine-Tuning
+
+
+<v-clicks depth="2">
+
+<!-- - 計算リソースの制限 -->
+- Limited computational resources
+<!-- - 過学習のリスク -->
+- Risk of overfitting [(Kozlowski & Evans, 2025)](https://journals.sagepub.com/doi/10.1177/00491241251337316)
+    <!-- - ある行動を学習させると、別の能力が落ちたり、他タスクで挙動が崩れることがある -->
+    - Training on certain behaviors can degrade other capabilities or destabilize performance on other tasks
+<!-- - **Activation Steering**: 言語モデルの内部表現を操作することで、モデルが指示に従うように制御する手法 -->
+- **Activation Steering**: A technique that controls model behavior by manipulating the internal representations of the language model
+    <!-- - 計算コストの低減 -->
+    - Reduced computational cost
+       <!-- - 基本的にはモデルのパラメータを更新せず -->
+       - Model parameters are essentially not updated
+    <!-- - 特定な状況に合わせるより精密な制御が可能となる -->
+    - Enables more precise control tailored to specific scenarios
+    <!-- - 解釈可能性の向上 -->
+    - Improved interpretability
+
+</v-clicks>
+
+
+---
+layout: two-cols-header
+---
+
+:: header ::
+
+# Activation Steering [Rimsky et al., 2024](https://aclanthology.org/2024.acl-long.828/)
+
+:: left ::
+
+<div style="display: flex; justify-content: center;">
+  <img src="./image/steering1.png" width="500" />
+</div>
+
+<!-- - Transformerの中間表現には、特定の意味や文脈に対応する情報が埋め込まれている -->
+- The intermediate representations of Transformers encode information corresponding to specific meanings and contexts
+<!-- - 対比データから得られた差分ベクトルは、生成過程において特定の出力を決定する計算に関与している -->
+- Difference vectors derived from contrastive data participate in computations that determine specific outputs during generation
+  <!-- - **差分ベクトルの意味を、特定の振る舞いやスタイル、方針に関連づけることは可能である** -->
+  - **It is possible to associate the meaning of a difference vector with specific behaviors, styles, or stances**
+
+:: right ::
+
+<div style="display: flex; justify-content: center;">
+  <img src="./image/steering2.png" width="360" />
+</div>
+
+<!-- - ゆえに、モデル推論時に適切な差分ベクトルを用いて中間表現を調整することで、**特定の要求を満たす出力を生成させる**ことが可能である -->
+- Therefore, by adjusting the intermediate representations with appropriate difference vectors at inference time, it is possible to **steer the model to produce outputs that satisfy specific requirements**
+
+
+---
+layout: default
+---
+
+<!-- # Activation Steeringの応用 -->
+# Applications of Activation Steering
+
+
+<!-- ### 政治的立場に関するsteering vectorの特定と応用 -->
+### Identifying and Applying Steering Vectors for Political Stance [(Kim et al., 2025)](https://arxiv.org/abs/2503.02080)
+
+<!-- - 議員を指定して、モデルに「その議員が言いそうな発言」を生成させる -->
+- Specify a legislator and prompt the model to generate statements that legislator would likely say
+    <!-- - 各議員に対して、DW-NOMINATEでイデオロギー情報を付与する -->
+    - Assign ideological information to each legislator using DW-NOMINATE scores
+<!-- - 異なるイデオロギーを指示したモデルの内部表現を比較することで、steering vectorを特定する -->
+- Identify steering vectors by comparing internal representations of the model prompted with different ideologies
+
+<div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; align-items: start;">
+  <div style="display: flex; justify-content: center;">
+    <img src="./image/steering_political.png" style="width: 100%; max-width: 620px; object-fit: contain;" />
+  </div>
+  <div style="display: flex; justify-content: center;">
+    <img src="./image/steering_political2.png" style="width: 100%; max-width: 310px; object-fit: contain;" />
+  </div>
+</div>
+
+
+
+
 
 ---
 transition: fade-out
